@@ -11,3 +11,6 @@ adfkasldfkja
 test if it can pull from remote to local
 
 ahhahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+test if can push remote to local
