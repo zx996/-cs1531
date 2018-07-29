@@ -8,9 +8,14 @@ TOPICS = lists, variables, loops
 '''
 
 def produceFibsList(n):
-    if n < 2:
-        return n
-    return fib(n-2) + fib(n-1)
+    return list(Fibonacci_Yield_tool(n))
+
+def Fibonacci_Yield_tool(n):
+    a, b = 0, 1
+    while n > 0:
+        yield b
+        a, b = b, a + b
+        n -= 1
 
     '''
     >>> produceFibsList(0)
