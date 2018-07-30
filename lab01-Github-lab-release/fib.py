@@ -15,7 +15,7 @@ def Fibonacci_Yield_tool(n):
     while n > 0:
         yield b
         a, b = b, a + b
-        #n -= 1
+        n -= 1
 
     '''
     >>> produceFibsList(0)
@@ -30,7 +30,7 @@ def Fibonacci_Yield_tool(n):
     [1, 1, 2, 3, 5]
     '''
     # TODO = fill in the code here, and return the correct result using the return keyword
-    #pass
+    pass
 
 if __name__ == '__main__':
     import doctest
