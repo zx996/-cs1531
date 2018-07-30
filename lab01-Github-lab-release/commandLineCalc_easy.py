@@ -5,13 +5,24 @@ DIFFICULTY = MEDIUM
 TOPICS = strings, variables, lists
 
 your task is to write a command line calculator
-this task is easy since we can use the eval function to do most of the legwork
+this task is easy since we can use the c function to do most of the legwork
 however, we need to parse possible invalid user input. This is your task
 
 return None if invalid input. Otherwise return the result
 '''
 
 def calculate(s):
+    '''
+    if s.isalpha()
+        return null
+    else
+        return eval(s)
+    '''
+    try:
+        return eval(s)
+    except SyntaxError:
+        return null
+
     '''
     >>> calculate("1+3")
     4
