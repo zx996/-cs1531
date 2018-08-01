@@ -11,22 +11,20 @@ def find_sum(numbers):
     return sum(numbers)
 
 def find_average(numbers):
-    return
+    list_average = find_sum(numbers)/ len(numbers)
+    return list_average
 
 def find_descending(numbers):
-    #TODO: numbers sorted in descending order
-    pass
+    return sorted(numbers, key=int, reverse=True)
 
 def second_smallest(numbers):
-    #TODO: find the second smallest
-    pass
-
-
+    second_smallest = sorted(numbers, key=int, reverse=False)
+    return second_smallest[1]
 '''
  bonus task:
  a function that takes in a list of numbers, and an index 'k'
  and prints the kth smallest number in the list
 '''
 def kth_smallest(numbers, k):
-    #TODO: find the kth smallest number in the list
-    pass
+    second_smallest = sorted(numbers, key=int, reverse=False)
+    return second_smallest[k]

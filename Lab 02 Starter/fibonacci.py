@@ -1,11 +1,11 @@
 '''
 Define a recursive function that, takes in an index n will calculate the n-th number in the fibonacci sequence.
-The fibonacci sequence is defined as 
-f(x) = 
+The fibonacci sequence is defined as
+f(x) =
 	| x == 0     = 0
 	| x == 1     = 1
 	| otherwise  = f(x - 1) + f(x - 2)
-The index is to be read from the standard input and 
+The index is to be read from the standard input and
 the fibonacci number at that index is to be printed
 to the standard output. You may assume that your
 program will be tested with valid inputs only.
@@ -22,7 +22,10 @@ fib_dict = {
 # Define this recursive function to return the expected output
 # Do not print it from this function
 def fib_sequence(num):
-	# to be completed
-	return fib_dict[num]
+	# to be completed]
+	if num < 4
+		return fib_dict[num]
+	else
+		return fib_dict[num-1] + fib_dict[num-2]
 
 #write code to accept user input, call the function and print the result
