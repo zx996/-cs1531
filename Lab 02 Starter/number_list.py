@@ -1,7 +1,9 @@
 def find_reverse(numbers):
+    print(numbers[::-1])
     return numbers[::-1]
 
 def find_max(numbers):
+    print(max(numbers))
     return max(numbers)
 
 def find_min(numbers):

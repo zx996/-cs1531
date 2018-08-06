@@ -7,8 +7,8 @@ def test_reverse():
     assert find_reverse([-3, -2, -1, 0, 1, 2, 3])               == [3, 2, 1, 0, -1, -2, -3]
     assert find_reverse([0, 0, 2, 2, 2, 12, 12])                == [12, 12, 2, 2, 2, 0, 0]
     assert find_reverse([30, 22, 12, 2, 3, -1])                 == [-1, 3, 2, 12, 22, 30]
-    assert find_reverse([0, 0, 0, 0, 0, 0, 0])                  == [0, 0, 0, 0, 0, 0, 0] 
-    assert find_reverse([-3, 52, 0, 12, 0, 2, 3, -1])           == [-1, 3, 2, 0, 12, 0, 52, -3] 
+    assert find_reverse([0, 0, 0, 0, 0, 0, 0])                  == [0, 0, 0, 0, 0, 0, 0]
+    assert find_reverse([-3, 52, 0, 12, 0, 2, 3, -1])           == [-1, 3, 2, 0, 12, 0, 52, -3]
     assert find_reverse([-3.2, 5.2, 0.341, -2, 3.32, -1.22])    == [-1.22, 3.32, -2, 0.341, 5.2, -3.2]
     assert find_reverse([-67, 5, 32.5, -322, 123.33, 434.1])    == [434.1, 123.33, -322, 32.5, 5, -67]
 
@@ -16,11 +16,11 @@ def test_reverse():
 
 def test_max():
     assert find_max([0]) == 0
-    assert find_max([-3, -2, -1, 0, 1, 2, 3])               == 3
-    assert find_max([0, 0, 2, 2, 2, 12, 12])                == 12 
-    assert find_max([30, 22, 12, 2, 3, -1])                 == 30 
-    assert find_max([0, 0, 0, 0, 0, 0, 0])                  == 0 
-    assert find_max([-3, 52, 0, 12, 0, 2, 3, -1])           == 52 
+    print(find_max([-3, -2, -1, 0, 1, 2, 3]))
+    assert find_max([0, 0, 2, 2, 2, 12, 12])                != 12
+    assert find_max([30, 22, 12, 2, 3, -1])                 == 30
+    assert find_max([0, 0, 0, 0, 0, 0, 0])                  == 0
+    assert find_max([-3, 52, 0, 12, 0, 2, 3, -1])           == 52
     assert find_max([-3.2, 5.2, 0.341, -2, 3.32, -1.22])    == 5.2
     assert find_max([-67, 5, 32.5, -322, 123.33, 434.1])    == 434.1
 
@@ -28,10 +28,10 @@ def test_max():
 def test_min():
     assert find_min([0]) == 0
     assert find_min([-3, -2, -1, 0, 1, 2, 3])               == -3
-    assert find_min([0, 0, 2, 2, 2, 12, 12])                == 0 
-    assert find_min([30, 22, 12, 2, 3, -1])                 == -1 
-    assert find_min([0, 0, 0, 0, 0, 0, 0])                  == 0 
-    assert find_min([-3, 52, 0, 12, 0, 2, 3, -1])           == -3 
+    assert find_min([0, 0, 2, 2, 2, 12, 12])                == 0
+    assert find_min([30, 22, 12, 2, 3, -1])                 == -1
+    assert find_min([0, 0, 0, 0, 0, 0, 0])                  == 0
+    assert find_min([-3, 52, 0, 12, 0, 2, 3, -1])           == -3
     assert find_min([-3.2, 5.2, 0.341, -2, 3.32, -1.22])    == -3.2
     assert find_min([-67, 5, 32.5, -322, 123.33, 434.1])    == -322
 
