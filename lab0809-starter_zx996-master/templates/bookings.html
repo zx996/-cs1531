@@ -2,7 +2,24 @@
 {% block body %}
 
 <h1>All Bookings</h1>
+<table id="customers">
+  <col width="40">
+  <col width="80">
+  <col width="80">
+  <col width="80">
+  <col width="80">
+  <col width="80">
+
+{% for booking in bookings %}
+<tr>
+     <td>{{ print(booking) }}<br></td>
+     <td>{{ booking.locaion }}<br></td>
 
 
+</tr>
+
+{% endfor %}
+
+
+</table>
 {% endblock %}
-

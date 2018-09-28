@@ -18,11 +18,14 @@ def login():
     Task 1: complete this function
     """
     if request.method == 'POST':
-
+        user = user_db.validate_login(request.form['username'], request.form['password'])
+        if user is None:
+            return render_template('login.html')
+        login_user(user)
         # Next helps with redirecting the user to their previous page
         redir = request.args.get('next')
         return redirect(redir or url_for('home'))
-    
+
     return render_template('login.html')
 
 
@@ -67,8 +70,9 @@ def cars():
     Task 2: At the moment this endpoint does not do anything if a search
     is sent. It should filter the cars depending on the search criteria
     """
-
-    cars = system.cars
+    name = request.args['name']
+    model = request.args['model']
+    cars = system.car_search(name,model)
     return render_template('cars.html', cars = cars)
 
 
@@ -98,7 +102,7 @@ def book(rego):
 
     if not car:
         abort(404)
-    
+
     if request.method == 'POST':
         date_format = "%Y-%m-%d"
         start_date  = datetime.strptime(request.form['start_date'], date_format)
@@ -108,7 +112,7 @@ def book(rego):
 
         if 'check' in request.form:
             fee = car.get_fee(num_days)
-            
+
             return render_template(
                 'booking_form.html',
                 confirmation=True,
@@ -120,7 +124,7 @@ def book(rego):
         elif 'confirm' in request.form:
             location = Location(request.form['start'], request.form['end'])
             booking  = system.make_booking(current_user, num_days, car, location)
-    
+
             return render_template('booking_confirm.html', booking=booking)
 
     return render_template('booking_form.html', car=car)
@@ -136,7 +140,9 @@ def car_bookings(rego):
     Task 3: This should render a new template that shows a list of all
     the bookings associated with the car represented by 'rego'
     """
-    return render_template('bookings.html')
+    temp_car = system.get_car(rego)
+    bookings = temp_car.bookings()
+    return render_template('bookings.html', bookings = bookings)
 
 
 '''
@@ -165,7 +171,7 @@ def add_car():
     Task 4.3: This should allow the admin to register
     new cars to the system, using the method provided
     in the CarFactory class.
-    
+
     Provide meaningful message upon success
     '''
 

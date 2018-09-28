@@ -15,9 +15,9 @@ class CarRentalSystem:
     Query Processing Services
     '''
     def car_search(self, name=None, model=None):
-
-        return []
-
+        return [i for i in self._cars
+                if(name.lower() in i.name.lower() and model.lower() in i.model.lower())
+                ]
 
     def get_user_by_id(self, user_id):
         for c in self._customers:
@@ -25,14 +25,14 @@ class CarRentalSystem:
                 return c
 
         return self._admin_system.get_user_by_id(user_id)
-            
+
 
     def get_car(self, rego):
         for c in self.cars:
             if c.rego == rego:
                 return c
         return None
-    
+
 
 
     '''
